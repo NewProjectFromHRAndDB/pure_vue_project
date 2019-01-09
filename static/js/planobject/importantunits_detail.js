@@ -532,7 +532,9 @@ new Vue({
             axios.post('/dpapi/digitalplanlist/list', params).then(function (res) {
                 var tempData = res.data.result;
                 for(var i=0;i<tempData.length;i++){
-                    tempData[i].zzsj = tempData[i].zzsj.substring(0,10);
+                    if(tempData[i].zzsj !== null && tempData[i].zzsj !== '' ){
+                        tempData[i].zzsj = tempData[i].zzsj.substring(0,10);
+                    }
                 }
                 this.yaData = tempData;
                 if (this.yaData.length !== 0) {
