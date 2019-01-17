@@ -691,6 +691,7 @@ var vm = new Vue({
         },
         //图层一
         drawMap: function () {
+            
             var map = this.map;
             var myIcon1 = new BMap.Icon("../../static/images/new/w1_p.png", new BMap.Size(100, 70)); //创建图标
             var province = [];
@@ -712,13 +713,13 @@ var vm = new Vue({
                 }
 
                 if (sllen == 4) {
-                    labelstr += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size:1.3em;color:red;">' + provinces[i].zddwsl + '</span>';
+                    labelstr += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size:1.3em;color:yellow;">' + provinces[i].zddwsl + '</span>';
                 } else {
-                    labelstr += '&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size:1.3em;color:red;">' + provinces[i].zddwsl + '</span>';
+                    labelstr += '&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size:1.3em;color:yellow;">' + provinces[i].zddwsl + '</span>';
                 }
                 if (mclen == 5 && sllen == 5) {
                     labelstr = '<span style="color:#fff;">' + provinces[i].xzqhmc + '</span>';
-                    labelstr += '&nbsp&nbsp<span style="font-size:1.3em;color:red;">' + provinces[i].zddwsl + '</span>';
+                    labelstr += '&nbsp&nbsp<span style="font-size:1.3em;color:yellow;">' + provinces[i].zddwsl + '</span>';
                 }
                 var label = new BMap.Label(labelstr);
                 marker.province = provinces[i];
